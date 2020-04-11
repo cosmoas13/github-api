@@ -4,6 +4,8 @@ import "../_style/style.scss";
 
 class Profile extends Component {
   render() {
+    // const user = this.props.profile;
+    // console.log(user, "user");
     return (
       <>
         <div className="container">
