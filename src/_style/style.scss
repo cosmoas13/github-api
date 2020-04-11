@@ -1,10 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  // ::-webkit-scrollbar {
-  //   display: none;
-  // }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 $bh: black;
@@ -74,7 +73,6 @@ header {
 
 .card-profile {
   border: 1px solid #e1e4e8;
-  width: 65%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -158,12 +156,25 @@ header {
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
+  .card-profile {
+    border: 1px solid #e1e4e8;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    .profile {
+      width: 150px;
+      height: 150px;
+      border: 1px solid #e1e4e8;
+    }
+  }
+
   .topnav a,
   .topnav input[type="text"] {
     float: none;
     display: block;
     text-align: left;
     width: 100%;
+    height: 5px;
     margin: 0;
     padding: 14px;
   }
@@ -225,11 +236,6 @@ header {
     color: $fontColorsecond;
     font-size: 12px;
   }
-}
-
-.container-repo {
-  overflow: scroll;
-  height: 250vh;
 }
 
 .repo {

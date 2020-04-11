@@ -5,32 +5,40 @@ import "../_style/style.scss";
 class Profile extends Component {
   render() {
     const user = this.props.profile;
-    const name = this.props.findname;
     return (
       <>
         {user ? (
           <>
             <div className="container">
               <div className="card-profile">
-                <img
-                  className="profile"
-                  alt="profile"
-                  src={user && user.owner.avatar_url}
-                />
+                <img className="profile" alt="profile" src={user.avatar_url} />
               </div>
             </div>
             <div className="about">
-              <p className="name">
-                <b>{name && name.name}</b>
-              </p>
-              <p>{user && user.owner.login}</p>
+              <>
+                {user.name !== null ? (
+                  <>
+                    <p className="name">
+                      <b>{user.name}</b>
+                      <p>{user.login}</p>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="name">
+                      <b>TANPA NAMA!!</b>
+                    </p>
+                    <p>{user.login}</p>
+                  </>
+                )}
+              </>
             </div>
             <div className="desc">
               <p>
-                <b>{this.props.follower.length}</b>&nbsp;&nbsp;Follower
+                <b>{user.followers}</b>&nbsp;&nbsp;Follower
               </p>
               <p>
-                <b>{this.props.following.length}</b>&nbsp;&nbsp;Following
+                <b>{user.following}</b>&nbsp;&nbsp;Following
               </p>
             </div>
             <div className="container">
@@ -48,16 +56,16 @@ class Profile extends Component {
             </div>
             <div className="about">
               <p className="name">
-                <b>{name && name.name}</b>
+                <b>{user.name}</b>
               </p>
-              <p>{user && user.owner.login}</p>
+              <p>{user.login}</p>
             </div>
             <div className="desc">
               <p>
-                <b>{this.props.follower.length}</b>&nbsp;&nbsp;Follower
+                <b>{user.followers}</b>&nbsp;&nbsp;Follower
               </p>
               <p>
-                <b>{this.props.following.length}</b>&nbsp;&nbsp;Following
+                <b>{user.following}</b>&nbsp;&nbsp;Following
               </p>
             </div>
             <div className="container">

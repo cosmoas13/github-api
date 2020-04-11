@@ -9,8 +9,7 @@ class Headers extends Component {
   state = {
     search: "",
     data: [],
-    data1: [],
-    data2: []
+    data1: []
   };
 
   handlechange = e => {
@@ -29,35 +28,23 @@ class Headers extends Component {
         const data = res.data;
         this.setState({ data });
       });
-    axios
-      .get(`https://api.github.com/users/${this.state.search}/followers`)
-      .then(res => {
-        const data1 = res.data;
-        this.setState({ data1 });
-      });
-    axios
-      .get(`https://api.github.com/users/${this.state.search}/following`)
-      .then(res => {
-        const data2 = res.data;
-        this.setState({ data2 });
-      });
+    axios.get(`https://api.github.com/users/${this.state.search}`).then(res => {
+      const data1 = res.data;
+      this.setState({ data1 });
+    });
     this.setState({
       search: ""
     });
   };
 
   render() {
-    const user = this.state.data[0];
+    const user = this.state.data1;
     return (
       <>
         <Header />
         <div className="grid-container">
           <div className="item2">
-            <Profile
-              profile={user}
-              follower={this.state.data1}
-              following={this.state.data2}
-            />
+            <Profile profile={user} />
           </div>
           <div className="item3">
             <div className="topnav">
