@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  // ::-webkit-scrollbar {
+  //   display: none;
+  // }
 }
 
 $bh: black;
@@ -47,8 +47,6 @@ header {
   .item3 {
     grid-area: main;
     margin-top: 10px;
-    overflow: auto;
-    height: 100vh;
   }
 }
 
@@ -231,7 +229,7 @@ header {
 
 .container-repo {
   overflow: scroll;
-  height: 150vh;
+  height: 250vh;
 }
 
 .repo {
