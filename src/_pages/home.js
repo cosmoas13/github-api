@@ -1,17 +1,25 @@
 import React, { Component } from "react";
 import Header from "../_component/header";
+import Profile from "../_component/profile";
+import Search from "../_component/search";
+import ListRepo from "../_component/list";
 import "../_style/style.scss";
 
 class Headers extends Component {
   render() {
     return (
-      <div className="grid-container">
-        <div className="item1">
-          <Header />
+      <>
+        <Header />
+        <div className="grid-container">
+          <div className="item2">
+            <Profile />
+          </div>
+          <div className="item3">
+            <Search />
+            <ListRepo />
+          </div>
         </div>
-        <div className="item2">Menu</div>
-        <div className="item3">Main</div>
-      </div>
+      </>
     );
   }
 }
