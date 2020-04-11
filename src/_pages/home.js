@@ -24,6 +24,8 @@ class Headers extends Component {
 
   render() {
     const user = this.state.data[0];
+    console.log("koneksi api", user);
+
     return (
       <>
         <Header />
