@@ -48,7 +48,7 @@ class Headers extends Component {
           </div>
           <div className="item3">
             <div className="topnav">
-              <form>
+              <form onSubmit={this.handleclick}>
                 <div className="container-search">
                   <input
                     type="text"
@@ -56,11 +56,7 @@ class Headers extends Component {
                     onChange={this.handlechange}
                     value={this.state.search}
                   />
-                  <button
-                    type="button"
-                    className="button button1"
-                    onClick={this.handleclick}
-                  >
+                  <button type="submit" className="button button1">
                     Find Repository
                   </button>
                 </div>
